@@ -72,13 +72,13 @@ superman.ozelGuc
 
 # ## Methods
 
-# In[56]:
+# In[2]:
 
 
 superman.ornekMethod()
 
 
-# In[101]:
+# In[3]:
 
 
 class Kopek():
@@ -93,26 +93,123 @@ class Kopek():
         return self.yas * Kopek.yilCarpani
 
 
-# In[102]:
+# In[4]:
 
 
 benimKopek = Kopek()
 
 
-# In[103]:
+# In[5]:
 
 
 benimKopek.yas
 
 
-# In[104]:
+# In[6]:
 
 
 benimKopek = Kopek(3)
 
 
-# In[106]:
+# In[7]:
 
 
 benimKopek.insanYasiniHesapla()
+
+
+# ## inheritance
+
+# In[8]:
+
+
+class Hayvan():
+    def __init__(self):
+        print("hayvan sınıfı init çağırıldı.")
+        
+    def method1(self):
+        print("hayvan sınıfı method1 çağırıldı.")
+        
+    def method2(self):
+        print("hayvan sınıfı method2 çağırıldı.")
+
+
+# In[9]:
+
+
+benimHayvanim = Hayvan()
+
+
+# In[10]:
+
+
+benimHayvanim.method1()
+
+
+# In[11]:
+
+
+benimHayvanim.method2()
+
+
+# In[22]:
+
+
+class Kedi(Hayvan):
+    def __init__(self):
+        Hayvan.__init__(self)
+        print("Kedi sınıfı init çağırıldı.")
+    
+    def miyavla(self):
+        print("miyav")
+    #override    
+    def method1(self):
+        print("kedi sınıfındaki method1 çağırıldı")
+
+
+# In[23]:
+
+
+benimKedim = Kedi()
+
+
+# In[24]:
+
+
+benimKedim.method1()
+
+
+# In[25]:
+
+
+benimKedim.method2()
+
+
+# In[26]:
+
+
+benimKedim.miyavla()
+
+
+# In[27]:
+
+
+digerHayvan = Hayvan()
+
+
+# In[29]:
+
+
+digerHayvan.method1()
+
+
+# In[31]:
+
+
+digerKedi = Kedi()
+
+
+# In[32]:
+
+
+digerKedi.method1()
 
